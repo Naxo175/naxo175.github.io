@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+
+
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+
+    <title>Les tutos de moi</title>
+
+</head>
+
+
+
+<body>
+
+
+
+
+
+    <header>
+
+        <h1>NOS REVENUS</h1>
+
+        <p>Visionnez nos revenus de l'année fiscale en cours !</p>
+
+    </header>
+
+
+
+    <table width="100%" border="1">
+
+        <caption>Revenus du site</caption>
+
+        <tr>
+
+            <th>Mois / Tutoriel</th>
+
+            <th>Janvier</th>
+
+            <th>Février</th>
+
+            <th>Mars</th>
+
+            <th>Avril</th>
+
+            <th>Mai</th>
+
+            <th>Juin</th>
+
+            <th>Juillet</th>
+
+            <th>Août</th>
+
+            <th>Septembre</th>
+
+            <th>Octobre</th>
+
+            <th>Novembre</th>
+
+            <th>Décembre</th>
+
+            <th>Total</th>
+
+        </tr>
+
+        <tr id="row1">
+
+            <td>Comment ouvrir une porte ?</td>
+
+        </tr>
+
+        <tr id="row2">
+
+            <td>Comment utiliser sa carte Modalis ?</td>
+
+        </tr>
+
+    </table>
+
+
+
+    <h3 id="revenus" style="color: green">Revenus bruts de l'année fiscale en cours : </h3>
+
+    <h3 id="frais" style="color: red">Frais de fonctionnement du site : </h3>
+
+    <h3 id="net" style="color: orange">Revenus nets à la fin de l'année fiscale : </h3>
+
+    <h2>Ce site n'est donc pas rentable. 😐</h2>
+
+
+
+    <script>
+
+
+
+
+
+        row1 = document.getElementById("row1");
+
+        row2 = document.getElementById("row2");
+
+
+
+        let i = 0;
+
+        let somme1 = 0;
+
+        while (i < 12) {
+
+            var cell = row1.insertCell(i + 1);
+
+            cell.innerHTML = Math.random().toFixed(2);
+
+            somme1 += Number(cell.textContent);
+
+            i++;
+
+        }
+
+
+
+        i++;
+
+        var s_cell1 = row1.insertCell(i)
+
+        s_cell1.innerHTML = somme1.toFixed(2);
+
+
+
+        let j = 0;
+
+        let somme2 = 0;
+
+        while (j < 12) {
+
+            var cell = row2.insertCell(j + 1);
+
+            cell.innerHTML = Math.random().toFixed(2);
+
+            somme2 += Number(cell.textContent);
+
+            j++;
+
+        }
+
+
+
+        j++;
+
+        var s_cell2 = row2.insertCell(j)
+
+        s_cell2.innerHTML = somme2.toFixed(2);
+
+
+
+        let total = (somme1 + somme2).toFixed(2);
+
+        document.getElementById("revenus").innerHTML = document.getElementById("revenus").textContent + total + " €";
+
+
+
+        let frais = getRndInteger(30, 40).toFixed(2);
+
+        document.getElementById("frais").innerHTML = document.getElementById("frais").textContent + frais + " €";
+
+
+
+        let diff = (total - frais).toFixed(2);
+
+        document.getElementById("net").innerHTML = document.getElementById("net").textContent + diff + " €";
+
+
+
+
+
+
+
+        function getRndInteger(min, max) {
+
+            return Math.random() * (max - min) + min;
+
+        }
+
+
+
+
+
+
+
+
+
+    </script>
+
+    
+
+
+
+    <!-- <footer>
+
+        <p>&copy; 2025 Les Tutos de Moi. Tous droits réservés.</p>
+
+    </footer> -->
+
+
+
+</body>
+
+
+
+</html>
+
